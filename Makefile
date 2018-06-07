@@ -26,12 +26,10 @@ all:: ; $(CURL) $(GMPLINK)
 all:: ; tar -xf $(GMPTAR)
 all:: ; cd $(GMP)
 all:: ; $(CONFIG)
-all:: ; make -j2 && make -j2 check && make -j2 install
+all:: ; make && make check && make install
 
 ###
 
-all:: ; -@echo -e "# of cpus"
-all:: ; -@sysctl -n hw.ncpu
 all:: ; cd ../
 
 ###
