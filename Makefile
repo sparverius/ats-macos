@@ -46,9 +46,5 @@ all:: ; (cd $(ATS) && time make all)
 
 ###
 
-all:: ; cd ~/
+all:: ; -@(cd src && make regress)
 
-###
-
-all:: ; cd src
-all:: ; make regress
