@@ -25,11 +25,7 @@ ATSC=ATS-contrib
 
 all:: ; $(CURL) $(GMPLINK)
 all:: ; tar -xf $(GMPTAR)
-all:: ; cd $(GMP)
-all:: ; $(CONFIG)
-all:: ; make
-all:: ; make check
-all:: ; make install
+all:: ; cd $(GMP) && ./configure && make && make check && make install
 
 ###
 
