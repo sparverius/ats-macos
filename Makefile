@@ -36,6 +36,10 @@ all:: ; cd ../
 all:: ; $(CLONE) $(ATSGIT) $(ATS)
 all:: ; $(CLONE) $(ATSCGIT) $(ATSC)
 
+all:: ; -@export PATSHOME=${PWD}/$(ATS)
+all:: ; -@export PATSCONTRIB=${PWD}/$(ATSC)
+all:: ; -@export PATH=${PATSHOME}/bin:${PATH}
+
 all:: ; echo "export PATSHOME=${PWD}/ATS2" >> ~/.bash_profile
 all:: ; echo "export PATH=\${PATSHOME}/bin:\${PATH}" >> ~/.bash_profile
 all:: ; echo "export PATSCONTRIB=${PWD}/AS2-contrib" >> ~/.bash_profile
