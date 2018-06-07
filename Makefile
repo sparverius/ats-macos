@@ -6,9 +6,11 @@ CLONE=git clone
 
 GMPV=6.1.2
 
-CURL=curl -O -L 
-GMPLINK=https://ftp.gnu.org/gnu/gmp/gmp-$(GMPV).tar.xz
 GMPTAR=gmp-$(GMPV).tar.xz
+
+CURL=curl -o $(GMPTAR)
+GMPLINK=https://ftp.gnu.org/gnu/gmp/gmp-$(GMPV).tar.xz
+
 GMP=gmp-$(GMPV)
 
 ###
@@ -21,12 +23,13 @@ ATSC=ATS-contrib
 
 ###
 
-
 all:: ; $(CURL) $(GMPLINK)
 all:: ; tar -xf $(GMPTAR)
 all:: ; cd $(GMP)
 all:: ; $(CONFIG)
-all:: ; make && make check && make install
+all:: ; make
+all:: ; make check
+all:: ; make install
 
 ###
 
