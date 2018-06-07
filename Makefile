@@ -44,3 +44,11 @@ all:: ; source ~/.bash_profile
 all:: ; (cd $(ATS) && ./configure)
 all:: ; (cd $(ATS) && time make all)
 
+###
+
+all:: ; cd ~/
+
+###
+
+all:: ; cd src
+all:: ; make regress
